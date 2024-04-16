@@ -1,23 +1,48 @@
-import matplotlib.pyplot as plt
+# import time
+# from multiprocessing import Pool, Process
 
-# 例としていくつかのデータを生成します
-x = range(10)
-y1 = [i**2 for i in x]
-y2 = [i**3 for i in x]
+# def nijou(inputs):
+#     x = inputs
+#     print('input: %d' % x)
+#     time.sleep(2)
+#     retValue = x * x
+#     return(retValue)
 
-fig, ax1 = plt.subplots()
+# if __name__ == "__main__":
 
-# 1番目の軸にプロットします
-ax1.plot(x, y1, 'g-', label='Y1 data')  # label パラメータを追加して凡例用のラベルを指定します
-ax1.set_xlabel('X data')
-ax1.set_ylabel('Y1 data', color='g')
+#     # Pool()を定義
+#     p = Pool()
+#     results = [0 for _ in range(72)]
+#     # プロセスを2つ非同期で実行
+#     for i in range(72):
+#         results[i] = p.apply_async(nijou, args=[i])
 
-# 2番目の軸を追加します
-ax2 = ax1.twinx()
-ax2.plot(x, y2, 'b-', label='Y2 data')  # label パラメータを追加して凡例用のラベルを指定します
-ax2.set_ylabel('Y2 data', color='b')
+#     # 1秒間隔で終了チェックして終了したら結果を表示
+#     for result in results:
+#         if result.ready():
+#             break
+    
+#     for result in results:
+#         print(result.get())
 
-# 凡例を追加します
-ax1.legend(loc='upper right')  # 凡例の位置を指定します
+#     p.close()
 
-plt.savefig("test.png")
+def all_zeros(lst):
+    return all(x == 0 for x in lst)
+
+# 使用例
+lst1 = [0, 0, 0]
+lst2 = [0, 1, 0]
+
+print(all_zeros(lst1))  # 出力: True
+print(all_zeros(lst2))  # 出力: False
+
+
+
+
+# d = {0:1, 1:2}
+# ds = {i*1000:d.copy() for i in range(3)}
+
+# ds[1000][1] += 1
+# ds = pd.DataFrame(ds).T
+# print(ds)
