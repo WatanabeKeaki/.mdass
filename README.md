@@ -1,0 +1,9 @@
+pythonのバージョンは3.9.16.
+インストールが必要なライブラリは
+numpy
+pandas
+pybind11
+tdqm
+cython
+ase
+の6つ.
